@@ -1,25 +1,54 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "OpenFlow",
+  "name": "Open Source Low-Code Analytics Workflow",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "favicon16.png",
+      "sizes": "16x16",
+      "type": "image/png"
     },
     {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
+      "src": "favicon32.png",
+      "sizes": "32x32",
+      "type": "image/png"
     },
     {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "src": "favicon64.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "touch-icon-ipad-pro.png",
+      "sizes": "167x167",
+      "type": "image/png"
+    },
+    {
+      "src": "touch-icon-iphone-6-plus.png",
+      "sizes": "180x180",
+      "type": "image/png"
     }
+    ,   
+    {
+      "src": "android-icon-hd.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-icon-normal.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }
+    
+  
   ],
+
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "black",
+  "background_color": "black"
 }

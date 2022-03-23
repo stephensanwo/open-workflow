@@ -1,0 +1,58 @@
+[
+    {
+      "id": "0",
+      "name": "Load CSV Data",
+      "description": "Load data from csv file in workspace",
+      "created_by": "Stephen Sanwo",
+      "created_on": "2/2/2022, 2:22:22 PM",
+      "state": "open",
+      "last_edit": "2/2/2022, 2:22:22 PM",
+      "link": "/node/load-csv-data",
+      "category": "component",
+      "code": "# Transformer model to reconcile transactions from different data sources based on narration field using an NLP and cosine similarity approach\n# Input -> Data (pandas df representation of the combine data source\n\ndef transformer_model(data):\n    model = SentenceTransformer('./sentence_transformers_model')\n    embeddings = model.encode(data)\n    cos_sim = util.cos_sim(embeddings, embeddings)\n\n    #Add all pairs to a list with their cosine similarity score\n    all_sentence_combinations = []\n    for i in range(len(cos_sim)-1):\n        for j in range(i+1, len(cos_sim)):\n        all_sentence_combinations.append([cos_sim[i][j], i, j])\n\n    #Sort list by the highest cosine similarity score\n    all_sentence_combinations = sorted(all_sentence_combinations, key=lambda x: x[0], reverse=True)\n    \n    res = []\n    for score, i, j in all_sentence_combinations:\n        res.append({\n        'data_i':data[i],\n        'data_j':data[j],\n        'cos_sim': '{:.4f}'.format(cos_sim[i][j])})\n    output = pd.DataFrame(res)\n\n    return output",
+      "components": [
+        {
+          "id": 0,
+          "type": "input-text",
+          "placeholder": "Input the workspace file path",
+          "helperText": "Copy and paste the url from the workspace file",
+          "labelText": "Filepath",
+          "variableName": "filepath"
+        }
+      ],
+      "health": "working",
+      "version": "v 1.0.0"
+    },
+    {
+        "id": "1",
+        "name": "Similarity Transformer Model",
+        "description": "Extract similarity scores from input data, based on provided comparable columns, where a unique identifier may not be available",
+        "created_by": "Stephen Sanwo",
+        "created_on": "2/2/2022, 2:22:22 PM",
+        "state": "open",
+        "last_edit": "2/2/2022, 2:22:22 PM",
+        "link": "/node/similarity-transformer-model",
+        "category": "component",
+        "code": "# Transformer model to reconcile transactions from different data sources based on narration field using an NLP and cosine similarity approach\n# Input -> Data (pandas df representation of the combine data source\n\ndef transformer_model(filepath):\n    model = SentenceTransformer('./sentence_transformers_model')\n    embeddings = model.encode(filepath)\n    cos_sim = util.cos_sim(embeddings, embeddings)\n\n    #Add all pairs to a list with their cosine similarity score\n    all_sentence_combinations = []\n    for i in range(len(cos_sim)-1):\n        for j in range(i+1, len(cos_sim)):\n        all_sentence_combinations.append([cos_sim[i][j], i, j])\n\n    #Sort list by the highest cosine similarity score\n    all_sentence_combinations = sorted(all_sentence_combinations, key=lambda x: x[0], reverse=True)\n    \n    res = []\n    for score, i, j in all_sentence_combinations:\n        res.append({\n        'data_i':data[i],\n        'data_j':data[j],\n        'cos_sim': '{:.4f}'.format(cos_sim[i][j])})\n    output = pd.DataFrame(res)\n\n    return output",
+        "components": [
+          {
+            "id": 0,
+            "type": "input-text",
+            "placeholder": "Input the workspace file path (Excel)",
+            "helperText": "Copy and paste the url from the workspace file",
+            "labelText": "Excel File Path",
+            "variableName": "filepath"
+          },
+          {
+            "id": 1,
+            "type": "input-text",
+            "placeholder": "Input the workspace file path (Json)",
+            "helperText": "Copy and paste the url from the workspace file",
+            "labelText": "Json File Path",
+            "variableName": "filepath"
+          }
+        ],
+        "health": "working",
+        "version": "v 1.2.0"
+      }
+  ]
