@@ -1,12 +1,16 @@
 import React, { useContext } from "react";
 import StyledTable from "../../components/StyledTable";
-import { FlowContext } from "../../context/flow";
+import { FileContext } from "../../context/workspace";
 
 const headerData = [
   {
     header: "Name",
     key: "name",
-    headerIsLink: true,
+    headerIsLink: false,
+  },
+  {
+    header: "File Type",
+    key: "file_type",
   },
   {
     header: "Description",
@@ -24,28 +28,16 @@ const headerData = [
     header: "Last Edit",
     key: "last_edit",
   },
-  {
-    header: "Nodes",
-    key: "nodes",
-  },
-  {
-    header: "Edges",
-    key: "edges",
-  },
-
-  {
-    header: "State",
-    key: "state",
-  },
 ];
-const FlowContent: React.FC = () => {
-  const flowData = useContext(FlowContext);
+const FileContent: React.FC = () => {
+  const fileData = useContext(FileContext);
+  console.log(fileData);
 
   return (
     <StyledTable
       isTableHeader={false}
       isPrimaryButton={false}
-      rowData={flowData.flows}
+      rowData={fileData.files}
       headerData={headerData}
       isActions={true}
       deleteAction={true}
@@ -55,4 +47,4 @@ const FlowContent: React.FC = () => {
   );
 };
 
-export default FlowContent;
+export default FileContent;

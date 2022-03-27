@@ -1,0 +1,23 @@
+[
+    {
+      "id": "1",
+      "name": "vendor_account_statement.xlsx",
+      "file_type": "xlsx",
+      "description": "Account statement from vendor for reconciliation",
+      "created_by": "Stephen Sanwo",
+      "created_on": "2/2/2022, 2:22:22 PM",
+      "last_edit": "2/2/2022, 2:22:22 PM",
+      "link": "/workspace/vendor_account_statement"
+    },
+    {
+        "id": "2",
+        "name": "sap_vendor_gl_spool.csv",
+        "file_type": "csv",
+        "description": "Vendor account GL spool from SAP",
+        "created_by": "Stephen Sanwo",
+        "created_on": "2/2/2022, 2:22:22 PM",
+        "last_edit": "2/2/2022, 2:22:22 PM",
+        "link": "/workspace/sap_vendor_gl_spool"
+      }
+  
+  ]

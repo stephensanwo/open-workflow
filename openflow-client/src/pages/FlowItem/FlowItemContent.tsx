@@ -41,8 +41,8 @@ const FlowItemContent = () => {
       <PageHeader
         breadcrumb={[
           { text: "Home", isCurrentPage: false, link: "/" },
-          { text: "Flow", isCurrentPage: false, link: "/flow" },
-          { text: "Flow Studio", isCurrentPage: true },
+          { text: "Flow Studio", isCurrentPage: false, link: "/flow" },
+          { text: `${flowItemData.name}`, isCurrentPage: true },
         ]}
         buttonText={"Run All"}
         icon={Play32}

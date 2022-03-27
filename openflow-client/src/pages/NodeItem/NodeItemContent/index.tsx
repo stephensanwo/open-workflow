@@ -30,8 +30,8 @@ const NodeItemContent = () => {
       <PageHeader
         breadcrumb={[
           { text: "Home", isCurrentPage: false, link: "/" },
-          { text: "Node", isCurrentPage: false, link: "/node" },
-          { text: "Node Designer", isCurrentPage: true },
+          { text: "Node Designer", isCurrentPage: false, link: "/node" },
+          { text: `${nodeItemData.name}`, isCurrentPage: true },
         ]}
         buttonText={"Validate"}
         icon={Play32}

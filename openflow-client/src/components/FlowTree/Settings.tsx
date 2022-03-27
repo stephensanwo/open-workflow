@@ -51,8 +51,6 @@ const Settings: React.FC<ModalProps> = (props) => {
     },
   ];
 
-  console.log(elements);
-
   if (elements.length > 0) {
     nodeHeaderData = Object.keys(
       elements.filter((item) => item.category === "node")[0].data

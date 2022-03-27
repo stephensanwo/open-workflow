@@ -118,17 +118,18 @@
           <div class="section-text">
             <p>
               OpenFlow is an open source low-code analytics automation workflow,
-              that provides a seamless platform for developers and data analysts
-              to deploy modular functions that can be re-used by other
-              developers and non-coders for automated analytics and robotic
-              process automation (RPA).
+              that provides a seamless platform for developers to deploy modular
+              functions that can be re-used by other developers, analysts and
+              non-coders for automated analytics and robotic process automation
+              (RPA).
             </p>
             <p>
               OpenFlow attempts to improve the collaboration between business
               process owners (who are typically non-coders), and developers, by
               providing an infrastructure where developers can share pre-written
               functions, targeted at solving specific use cases, which consumers
-              can then mix and match while building their workflows.
+              can then mix and match while building their workflows using a
+              simple user interface.
             </p>
             <h2>Why OpenFlow?</h2>
             <p>
@@ -140,20 +141,21 @@
               principle is that the function will take an input of a range of
               data structures and return an output. These functions can then be
               mixed and matched in multiple ways to create a workflow that
-              solves a specific problem. For example, a bank reconciliation work
-              flow could involve the following:
+              solves a specific problem. For example, a simple reconciliation
+              work flow between two different data sources could involve the
+              following:
             </p>
 
             <ul>
-              <li>
-                1. Bank statement extraction from email or online bank
-                application
-              </li>
-              <li>2. Report extraction from accounting software</li>
+              <li>1. Data extraction from source system A</li>
+              <li>2. Data extraction from source system B</li>
               <li>
                 3. Run a basic probabilistic fuzzy match on specific columns
               </li>
-              <li>4. Or Run a more advanced ML-based matching algorithm</li>
+              <li>
+                4. Or Run a more advanced ML-based matching algorithm where a
+                unique identifier does not exist
+              </li>
               <li>5. Extract reconciliation reports, and send by email</li>
             </ul>
             <p>
@@ -173,36 +175,25 @@
         <div class="content-section">
           <div class="section-text">
             <p>
-              OpenFlow attempts to improve the collaboration between business
-              process owners (who are typically non-coders), and developers, by
-              providing an infrastructure where developers can share pre-written
-              functions, targeted at solving specific use cases, which consumers
-              can then mix and match while building their workflows.
-            </p>
-            <p>
               With OpenFlow, developers can create re-usable functions, and wrap
               them with a simple user interface, where consumers can easily
               provide the variables required by those functions, and chain these
-              functions together as part of a larger workflow.
+              functions together a s part of a larger workflow. For example, the
+              reconciliation workflow will have 4 functions for each step, two
+              of which are not necessarily related to a reconciliation procedure
+              itself (extracting data from source systems and sending reports to
+              an email address)
             </p>
             <p>
-              For example, the bank reconciliation workflow will have 4
-              functions for each step, two of which are not necessarily related
-              to an account reconciliation itself (extracting data from email
-              and accounting software, and sending reports to an email address)
-              A business owner can provide the required variables to run the
-              workflow and reuse, batch or schedule data operations.
-            </p>
-            <p>
+              A business owner (consumer) can provide the required variables to
+              run the workflow and reuse, batch or schedule data operations.
               From a developer point of view, you wouldn’t need to provide an
               API or use a tool like streamlit for every application you want
               some users to consume. You can embed your functions in OpenFlow
-              and mix and match the logic for your workflow as you wish.
-            </p>
-            <p>
-              From a business owner point of view, you have the flexibility to
-              go beyond a preset workflow logic set by the developer and
-              construct your own logic.
+              and mix and match the logic for your workflow as you wish. From a
+              business owner point of view, you have the flexibility to go
+              beyond a preset workflow logic set by the developer and construct
+              your own logic.
             </p>
           </div>
           <div class="section-image">
@@ -231,7 +222,8 @@
               contributor and it provides a simple user interface to interact
               with it. You have little or no flexibility with component nodes.
               For example, grouping a data frame can be a component node, if all
-              the required variables are converted to input dialogs or filters.
+              the required variables are converted to input dialogs or a simple
+              key-value input.
             </p>
             <p>
               Nodes communicate with each other through the edges. nodes will
@@ -239,13 +231,11 @@
               and it does not depend on an output from another node. Selecting a
               node opens up an actions pane, the configuration of the actions
               pane will vary depending on if the node is a component node or a
-              code node.
+              code node. Component nodes will have a user interface for inputs,
+              the code nodes however will have a code interface with more
+              flexibility to control and alter the underlying code directly
             </p>
-            <p>
-              Component nodes will have user interface for inputs, the code
-              nodes however will have a code interface with more flexibility to
-              control and alter the underlying code directly
-            </p>
+            <p></p>
           </div>
           <div class="section-image"></div>
         </div>
@@ -255,26 +245,25 @@
             <h2>Software Architecture</h2>
             <p>
               At a high level the user will interact with OpenFlow through the
-              client built in react, and IBM Carbon as the design system. The
-              API Gateway that serves API calls from and to the client is built
-              in GO, and the gateway just serves as a proxy between the client
-              and the background processing queues.
+              client built in React (TypeScript), with IBM Carbon as the design
+              system. The API Gateway that serves API calls from and to the
+              client is built in GO, and just serves as a proxy between the
+              client and the background processing queues.
             </p>
             <p>
               For the backend processing task queues, I will be experimenting
-              with Ubers Cadence, where I intend to use it as a queue to spin up
-              nodes that’s have been pre configured with the python
-              environments. Obviously there is the question of scaling. while
-              this is still intended to be a deploy-on-your-own docker compose
-              workflow, I believe I can possibly look into a scalable cloud
-              option in the future.
+              with Uber Cadence, where I intend to use it to spin up nodes that
+              have been pre configured with python environments. For metadata
+              storage, I will use a PostgreSQL database and a Redis cache. I had
+              also thought about using a Redis queue to handle the background
+              jobs, however I wanted to give cadence a try for this. Things may
+              change in the future depending on how flexible cadence is.
             </p>
             <p>
-              For metadata storage, I will use a postgreSQL database and a Redis
-              cache to handle real time saving of data. I had also thought about
-              using a Redis queue to handle the background jobs, however I
-              wanted to give cadence a try for this. Things may change in the
-              future depending on how flexible cadence is.
+              Obviously there is the question of scaling. while this is still
+              intended to be a deploy-on-your-own docker compose workflow, I
+              believe I can possibly look into a scalable cloud option in the
+              future.
             </p>
           </div>
           <div class="section-image">

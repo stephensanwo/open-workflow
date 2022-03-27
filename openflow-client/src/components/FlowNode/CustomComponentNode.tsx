@@ -24,7 +24,6 @@ const Description = styled.div`
 const CustomComponentNode: React.FC<NewNodeProps> = ({
   id,
   data,
-
   position,
   handle,
 }) => {

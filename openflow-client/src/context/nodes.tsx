@@ -22,7 +22,6 @@ export const NodeContextProvider = ({ children }: NodeContextProviderProps) => {
   const [nodeId, setNodeId] = useState<string | null>("");
   const [nodes, setNodes] = useState<Array<any>>(nodeStore);
 
-  console.log(nodes);
   return (
     <NodeContext.Provider
       value={{

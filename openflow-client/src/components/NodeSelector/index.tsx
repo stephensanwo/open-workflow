@@ -10,7 +10,6 @@ const NodeSelectorLabel = styled.div`
 
 const NodeSelector: React.FC = () => {
   const nodeData = useContext(NodeContext);
-  console.log(nodeData);
 
   return (
     <div>
@@ -44,28 +43,6 @@ const NodeSelector: React.FC = () => {
             version={node.version}
           />
         ))}
-        {/* <NodeSelectorItem
-          type={"input"}
-          data={{
-            label: "File Input",
-            description: "Load CSV from One Drive",
-            state: "open",
-            version: "v 2.1.5",
-            health: "working",
-          }}
-          code={``}
-        /> */}
-        {/* <NodeSelectorItem
-          type={"input"}
-          data={{
-            label: "File Input",
-            description: "Load CSV from Google Drive",
-            state: "failed",
-            version: "v 1.1.5",
-            health: "failing",
-          }}
-          code={``}
-        /> */}
       </div>
     </div>
   );

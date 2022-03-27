@@ -17,6 +17,7 @@
           "placeholder": "Input the workspace file path",
           "helperText": "Copy and paste the url from the workspace file",
           "labelText": "Filepath",
+          "value": "",
           "variableName": "filepath"
         }
       ],
@@ -41,6 +42,7 @@
             "placeholder": "Input the workspace file path (Excel)",
             "helperText": "Copy and paste the url from the workspace file",
             "labelText": "Excel File Path",
+            "value": "",
             "variableName": "filepath"
           },
           {
@@ -49,6 +51,7 @@
             "placeholder": "Input the workspace file path (Json)",
             "helperText": "Copy and paste the url from the workspace file",
             "labelText": "Json File Path",
+            "value": "",
             "variableName": "filepath"
           }
         ],
