@@ -3,12 +3,13 @@ import { Tile } from "carbon-components-react";
 import { FlowContext } from "../../context/flow";
 import { StateColors } from "../../shared/themes";
 import { DotMark16 } from "@carbon/icons-react";
+import { NodeContext } from "../../context/nodes";
 
-const FlowContentMobile: React.FC = () => {
-  const flowData = useContext(FlowContext);
+const NodeContentMobile: React.FC = () => {
+  const NodeData = useContext(NodeContext);
   return (
     <Fragment>
-      {flowData.flows.map((row, index) => (
+      {NodeData.nodes.map((row, index) => (
         <Tile
           style={{
             width: "100%",
@@ -87,4 +88,4 @@ const FlowContentMobile: React.FC = () => {
   );
 };
 
-export default FlowContentMobile;
+export default NodeContentMobile;

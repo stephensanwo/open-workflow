@@ -23,7 +23,7 @@ const Flow: React.FC = () => {
 
   return (
     <FlowContextProvider>
-      <MobileContainerDiv>
+      <MobileContainerDiv dark>
         <PageHeader
           breadcrumb={[
             { text: "Home", isCurrentPage: false, link: "/" },

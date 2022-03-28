@@ -9,12 +9,24 @@ import { Link } from "react-router-dom";
 const SignedInContainer = styled.div`
   height: 90vh;
   padding: 10% 0px 20px 5%;
+
+  @media (max-width: 1080px) {
+    padding: 0;
+    padding-top: 40px;
+    width: 95%;
+    margin: auto;
+    min-height: 100vh;
+  }
 `;
 
 const SignedInActions = styled.div`
   display: flex;
   margin-top: 60px;
   gap: 100px;
+  @media (max-width: 1080px) {
+    flex-direction: column;
+    gap: 50px;
+  }
 `;
 
 const SignedInOthers = styled.div`
@@ -22,6 +34,27 @@ const SignedInOthers = styled.div`
   color: "#fff";
   margin-top: 100px;
   gap: 60px;
+  @media (max-width: 1080px) {
+    flex-direction: column;
+    gap: 50px;
+  }
+`;
+
+const TileContainer = styled.div`
+  width: 350px;
+
+  @media (max-width: 1080px) {
+    width: 100%;
+  }
+`;
+
+const NotificationContainer = styled.div`
+  width: 40%;
+
+  @media (max-width: 1080px) {
+    width: 100%;
+    margin-bottom: 50px;
+  }
 `;
 
 const SignedIn = () => {
@@ -76,11 +109,7 @@ const SignedIn = () => {
       </SignedInActions>
 
       <SignedInOthers>
-        <div
-          style={{
-            width: "350px",
-          }}
-        >
+        <TileContainer>
           <Tile
             style={{
               width: "100%",
@@ -164,12 +193,8 @@ const SignedIn = () => {
               </div>
             </div>
           </Tile>
-        </div>
-        <div
-          style={{
-            width: "40%",
-          }}
-        >
+        </TileContainer>
+        <NotificationContainer>
           <div
             style={{
               display: "flex",
@@ -193,7 +218,7 @@ const SignedIn = () => {
                   size="small"
                   style={{ marginBotton: "100px" }}
                 >
-                  View Detailed Error Message
+                  Detailed Error
                 </Button>
               </div>
             }
@@ -214,7 +239,7 @@ const SignedIn = () => {
                   size="small"
                   style={{ marginBotton: "100px" }}
                 >
-                  View Detailed Error Message
+                  Detailed Error
                 </Button>
               </div>
             }
@@ -222,7 +247,7 @@ const SignedIn = () => {
             hideCloseButton={true}
             styles={{ height: "135px", marginTop: "14px" }}
           />
-        </div>
+        </NotificationContainer>
       </SignedInOthers>
     </SignedInContainer>
   );

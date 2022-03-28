@@ -11,6 +11,7 @@ import NewNode from "./NewNode";
 import { NodeContextProvider } from "../../context/nodes";
 import NodeContent from "./NodeContent";
 import PageHeader from "../../components/PageHeader";
+import NodeContentMobile from "./NodeContentMobile";
 
 const FlowContainer = styled.div`
   display: flex;
@@ -31,7 +32,7 @@ const Flow: React.FC = () => {
 
   return (
     <NodeContextProvider>
-      <MobileContainerDiv>
+      <MobileContainerDiv dark>
         <PageHeader
           breadcrumb={[
             { text: "Home", isCurrentPage: false, link: "/" },
@@ -39,7 +40,7 @@ const Flow: React.FC = () => {
           ]}
           headerText={"Node Designer"}
         />
-        <NodeContent />
+        <NodeContentMobile />
       </MobileContainerDiv>
 
       <PageContainer dark>

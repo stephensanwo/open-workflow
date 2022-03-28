@@ -25,7 +25,6 @@ export const HeaderAction = styled.div`
 `;
 
 export const MobileWarningDiv = styled.div`
-  background-color: #f4f4f4;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -33,14 +32,16 @@ export const MobileWarningDiv = styled.div`
   align-items: center;
   padding: 50px;
   text-align: center;
+  background-color: ${(props: any) => (props.dark ? "#161616" : "#f4f4f4")};
 `;
 
 export const MobileContainerDiv = styled.div`
-  background-color: #f4f4f4;
   width: 90%;
   margin: auto;
   padding-top: 40px;
   margin-bottom: 40px;
+  background-color: ${(props: any) => (props.dark ? "#161616" : "#f4f4f4")};
+  min-height: 100vh;
   @media ${device.laptop} {
     display: none;
   }

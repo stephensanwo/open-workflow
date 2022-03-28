@@ -9,7 +9,6 @@ export const HomeDiv = styled.div`
   padding-right: 3.5%;
   padding-left: 3.5%;
   padding-top: 40px;
-  background-color: #161616;
 `;
 
 const Home = () => {
