@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   SideNav,
   SideNavItems,
@@ -12,15 +12,17 @@ import {
   DataBase16,
 } from "@carbon/icons-react";
 
-interface Props {
-  expanded: boolean;
-}
+const MenuPanel = () => {
+  const [showSideNav, setShowSideNav] = useState(false);
 
-const MenuPanel = (props: Props) => {
+  useEffect(() => {
+    if (window.innerWidth >= 1080) setShowSideNav(true);
+  }, []);
+
   return (
     <SideNav
       isFixedNav
-      expanded={props.expanded}
+      expanded={showSideNav}
       isChildOfHeader={true}
       aria-label="Side navigation"
       style={{ paddingTop: "60px" }}

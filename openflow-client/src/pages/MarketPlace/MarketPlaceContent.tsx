@@ -19,7 +19,7 @@ const MarketPlaceContent: React.FC = () => {
         {nodeData.nodes.map((row: any, index) => (
           <Tile
             style={{
-              width: "300px",
+              width: "350px",
               height: "200px",
               backgroundColor: "#333333",
               marginTop: "20px",

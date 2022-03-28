@@ -15,7 +15,6 @@ import {
   HeaderMenuButton,
 } from "carbon-components-react";
 import ControlPanel from "./ControlPanel";
-import MenuPanel from "./MenuPanel";
 
 interface Props {
   isHeaderMenu?: boolean;
@@ -80,7 +79,7 @@ const StyledHeader: React.FC<Props> = ({ isHeaderMenu }) => {
           >
             <AppSwitcher20 />
           </HeaderGlobalAction>
-          <MenuPanel expanded={isSideNavExpanded} />
+
           <ControlPanel expanded={isExpanded} />
         </HeaderGlobalBar>
       </Header>
