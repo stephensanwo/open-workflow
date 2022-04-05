@@ -36,6 +36,8 @@ export const FlowItemContextProvider = ({
 
   const [elements, setElements] = useState<any>([]);
 
+  console.log(elements);
+
   return (
     <FlowItemContext.Provider
       value={{
