@@ -2,7 +2,7 @@
 
 Open Workflow is an open source low-code analytics automation workflow, that decouples monolithic analytics projects into re-usable functional components that can be chained together to solve a problem. It provides a seamless platform for developers to deploy modular functions that can be re-used by other developers, analysts and non-coders for automated analytics and robotic process automation (RPA).
 
-Open Workflow attempts to improve the collaboration between business process owners (who are typically non-coders), and developers, by providing an infrastructure where developers can share pre-written functions, targeted at solving specific use cases, which consumers can then mix and match while building their workflows using a simple user interface.
+Open Workflow improves the collaboration between business process owners (who are typically non-coders), and developers, by providing an infrastructure where developers can share pre-written functions, targeted at solving specific use cases, which consumers can then mix and match while building their workflows using a simple user interface.
 
 ### How it Works
 
