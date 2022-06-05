@@ -1,9 +1,9 @@
-# OpenFlow
+# Open Workflow
 
 An open source low-code analytics automation workflow
 
-### OpenFlow Client
+### Open Workflow Client
 
-This repository houses all the code used to build the OpenFlow UI
+This repository houses all the code used to build the Open Workflow UI
 Author:
 Stephen Sanwo
