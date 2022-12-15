@@ -1,0 +1,30 @@
+.bx--link {
+  color: #1192e8;
+  transition: none;
+}
+
+.bx--link:hover {
+  color: #1192e8;
+}
+.bx--breadcrumb-item .bx--link:visited:hover {
+  color: #1192e8;
+}
+
+.bx--link::after {
+  color: #1192e8;
+}
+
+.bx--breadcrumb-item .bx--link:visited {
+  color: #1192e8;
+}
+
+.bx--breadcrumb-item [aria-current="page"],
+.bx--breadcrumb-item.bx--breadcrumb-item--current .bx--link {
+  color: #fff;
+}
+
+.bx--breadcrumb-item::after {
+  margin-left: 0.5rem;
+  color: #fff;
+  content: "/";
+}
